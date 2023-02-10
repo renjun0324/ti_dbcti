@@ -16,9 +16,11 @@ wrapper:
   topology_inference: free
   trajectory_types:
   - linear
+  - cyclic
+  - disconnected_graph
+  - tree
+  - graph
   - bifurcation
-  - convergence
-  - multifurcation
   input_required: 
   - expression
   - start_id
