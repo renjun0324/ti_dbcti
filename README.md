@@ -3,6 +3,11 @@
 # ti_dbcti
 A docker container for dbcti, mainly for cell trajectory inference analysis of single cell RNA-seq data
 
+## dbcti repository
+```shell
+https://github.com/tianlt/dbcti
+```
+
 ## pull container
 ```shell
 docker pull renjun0324/ti_dbcti
