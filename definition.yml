@@ -1,0 +1,82 @@
+method:
+  id: dbcti
+  name: dbcti
+  tool_id: dbcti
+  source: tool
+  platform: R
+  url: https://github.com/tianlt/dbcti
+  license: MIT
+  authors:
+  - given: Lan
+    family: Tian
+    github: tianlt
+
+wrapper:
+  type: trajectory
+  topology_inference: free
+  trajectory_types:
+  - linear
+  - bifurcation
+  - convergence
+  - multifurcation
+  input_required: 
+  - expression
+  - start_id
+  
+parameters:
+  - id: normalized
+    type: logical
+    default: yes
+    description: indication of if data being normalized
+  - id: gene_cri
+    type: integer
+    default: 1
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 100
+    description: gene_cri criteria for the sum of counts of any gene in all cells to be greater than
+  - id: cell_cri
+    type: integer
+    default: 1
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 100
+    description: criteria for cells containing genes counts greater than
+  - id: use_normalized_data
+    type: logical
+    default: yes
+    description: if or not use normalized data as input 
+  - id: gene_number
+    type: integer
+    default: 50
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 10000
+    description: number of features with the highest variation
+  - id: ndraw
+    type: integer
+    default: 100
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 10000
+    description: number of draws
+  - id: expansion
+    type: numeric
+    default: 1.5
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 10
+    description: eapansion parameter for fitted distribution
+  - id: r
+    type: integer
+    default: 5
+    distribution:
+      type: uniform
+      lower: 0
+      upper: 100
+    description: distance from the data point for the counting area
